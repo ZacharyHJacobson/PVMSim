@@ -1,14 +1,13 @@
-#ifndef MAINMENU
-#define MAINMENU
+#ifndef MAXHITMENU
+#define MAXHITMENU
 
 #include "menu.h"
 
-class MainMenu : Menu {
+class MaxHitMenu : Menu {
     public:
         void Navigate();
     private:
         void TopMenu();
-        void AboutMenu();
 };
 
 #endif

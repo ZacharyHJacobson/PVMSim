@@ -9,9 +9,28 @@ void Menu::DisplayMenu()
     }
 }
 
-std::string Menu::SelectOption(int choice)
+int Menu::GetAction()
 {
-    choice -= 1;
-    if (choice < 0 || choice >= current_options.size()) return {};
-    return current_options[choice].menu_name;
+    int choice;
+    while(!(std::cin >> choice) || choice < 1 || choice > current_options.size())
+    {
+        std::cin.clear();
+        std::cin.ignore();
+    }
+    std::cout << std::endl;
+    return current_options[choice-1].action;
+}
+
+void Menu::AddOption(std::string text, int action)
+{
+    mo = new MenuOption(text, action);
+    current_options.push_back(*mo);
+}
+
+int Menu::ProcessMenu()
+{
+    DisplayMenu();
+    int action = GetAction();
+    current_options.clear();
+    return action;
 }

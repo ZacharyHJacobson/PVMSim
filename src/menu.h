@@ -8,22 +8,26 @@
 struct MenuOption
 {
     std::string text;
-    std::string menu_name;
+    int action;
 
-    MenuOption(std::string t, std::string mn) : text(t), menu_name(mn) {}
+    MenuOption(std::string t, int a) : text(t), action(a) {}
 };
 
 class Menu
 {
     private:
+        int GetAction();
+        void DisplayMenu();
         std::map<std::string, std::vector<MenuOption>> menus;
         std::string menu_name;
-    protected:
         std::vector<MenuOption> current_options;
+        MenuOption* mo;
+    protected:
+        int ProcessMenu();
+        virtual void TopMenu() = 0;
+        void AddOption(std::string, int);
     public:
         virtual void Navigate() = 0;
-        void DisplayMenu();
-        std::string SelectOption(int);
 };
 
 #endif

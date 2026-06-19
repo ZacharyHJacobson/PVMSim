@@ -1,5 +1,6 @@
 #include "maxhitmenu.h"
 #include <iostream>
+#include "..\\lib\\damagecalc.h"
 
 enum Choices
 {
@@ -16,7 +17,7 @@ void MaxHitMenu::Navigate()
         switch(choice)
         {
             case DEMO:
-                std::cout << "Max hit demo goes here" << std::endl;
+                std::cout << "Max hit: " << damage_calc::physicalMaxHit(118, 23, 3, 0, 100) << std::endl;
                 TopMenu();
                 break;
             case TOP_MENU:

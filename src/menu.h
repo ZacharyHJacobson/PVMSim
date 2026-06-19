@@ -1,5 +1,4 @@
-#ifndef MENU
-#define MENU
+#pragma once
 
 #include <map>
 #include <string>
@@ -29,5 +28,3 @@ class Menu
     public:
         virtual void Navigate() = 0;
 };
-
-#endif

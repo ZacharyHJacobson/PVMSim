@@ -1,5 +1,4 @@
-#ifndef MAXHITMENU
-#define MAXHITMENU
+#pragma once
 
 #include "menu.h"
 
@@ -9,5 +8,3 @@ class MaxHitMenu : Menu {
     private:
         void TopMenu();
 };
-
-#endif

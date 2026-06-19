@@ -1,5 +1,4 @@
-#ifndef MAINMENU
-#define MAINMENU
+#pragma once
 
 #include "menu.h"
 
@@ -10,5 +9,3 @@ class MainMenu : Menu {
         void TopMenu();
         void AboutMenu();
 };
-
-#endif

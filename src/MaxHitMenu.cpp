@@ -17,7 +17,7 @@ void MaxHitMenu::Navigate()
         switch(choice)
         {
             case DEMO:
-                std::cout << "Max hit: " << damage_calc::physicalMaxHit(118, 23, 3, 0, 100) << std::endl;
+                std::cout << "Max hit: " << damage_calc::physicalMaxHit(118, damage_calc::piety_damage, damage_calc::aggressive_strength_bonus, damage_calc::melee_normal_void_damage, 100) << std::endl;
                 TopMenu();
                 break;
             case TOP_MENU:

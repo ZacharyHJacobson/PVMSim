@@ -5,7 +5,7 @@
 class Equipment {
     public:
         enum Slot {
-            HEAD,
+            HEAD = 0,
             BACK,
             NECK,
             AMMUNITION,
@@ -16,20 +16,25 @@ class Equipment {
             LEGS,
             HANDS,
             FEET,
-            FINGER
+            FINGER,
+            SLOTS_COUNT     //not a slot
         };
-        int stab_accuracy = 0;
-        int slash_accuracy = 0;
-        int crush_accuracy = 0;
-        int magic_accuracy = 0;
-        int stab_defence = 0;
-        int slash_defence = 0;
-        int crush_defence = 0;
-        int magic_defence = 0;
-        int melee_strength = 0;
-        int ranged_strength = 0;
-        int magic_strength = 0;     //1.5% = 15, 2% = 20
-        int prayer_bonus;
+        enum Stat {
+            STAB_ACCURACY = 0,
+            SLASH_ACCURACY,
+            CRUSH_ACCURACY,
+            MAGIC_ACCURACY,
+            STAB_DEFENCE,
+            SLASH_DEFENCE,
+            CRUSH_DEFENCE,
+            MAGIC_DEFENCE,
+            MELEE_STRENGTH,
+            RANGED_STRENGTH,
+            MAGIC_STRENGTH,
+            PRAYER_BONUS,    //1.5% = 15, 2% = 20
+            STATS_COUNT     //not a stat
+        };
+        int stats[STATS_COUNT];
         int ApplyBane(int max_hit, Encounter encounter);
         Slot GetSlot();
         int GetSpeed();

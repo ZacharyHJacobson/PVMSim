@@ -21,8 +21,17 @@ class Encounter {
         };
         Bane bane;
         float bane_resistance;
+        enum ElementalWeakness {
+            NO_WEAKNESS,
+            AIR,
+            WATER,
+            EARTH,
+            FIRE
+        };
+        ElementalWeakness elemental_weakness;
+        int weakness_magnitude;
+        int armour;
         bool wilderness = false;
         bool on_task = true;
-        Encounter();                    //non-bane constructor
-        Encounter(Bane b, float br);    //bane constructor
+        Encounter(Bane b = BANELESS, float br = 0.0, ElementalWeakness e = NO_WEAKNESS, int wm = 0);
 };

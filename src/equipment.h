@@ -38,8 +38,9 @@ class Equipment {
         int ApplyBane(int max_hit, Encounter encounter);
         Slot GetSlot();
         int GetSpeed();
-        Equipment(Slot s);    //non-weapon constructor
-        Equipment(int s);    //weapon constructor
+        Equipment(Slot s);           //non-weapon constructor
+        Equipment(int s);            //weapon constructor
+        Equipment(std::string name); //load from equipment.json
     private:
         Slot slot;
         int speed;              //in ticks

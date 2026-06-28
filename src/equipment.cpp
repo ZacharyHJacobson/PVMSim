@@ -30,9 +30,7 @@ Equipment::Equipment(int s)
 
 Equipment::Equipment(std::string name)
 {
-    Json::Value equipment_root;
-    std::ifstream equipment_json_file("equipment.json", std::ifstream::binary);
-    equipment_json_file >> equipment_root;
+    Json::Value equipment_root = GetRoot();
 
     Json::Value equipment_stats;
     for(int x = 0; x < equipment_root.size(); x++)
@@ -74,4 +72,14 @@ Equipment::Equipment(std::string name)
         }
     }
     std::invalid_argument("Equipment not found");
+}
+
+Json::Value Equipment::GetRoot()
+{
+    if(root.size() < 1)
+    {
+        std::ifstream equipment_json_file("equipment.json", std::ifstream::binary);
+        equipment_json_file >> root;
+    }
+    return root;
 }

@@ -44,4 +44,6 @@ class Equipment {
     private:
         Slot slot;
         int speed;              //in ticks
+        static Json::Value root;
+        Json::Value GetRoot();
 };

@@ -2,7 +2,7 @@
 #include <fstream>
 #include <json/json.h>
 
-int Equipment::ApplyBane(int max_hit, Encounter encounter)
+int Equipment::ApplyBane(int max_hit, Monster monster)
 {
     return max_hit;
 }

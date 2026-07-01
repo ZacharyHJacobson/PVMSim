@@ -1,6 +1,6 @@
-#include "encounter.h"
+#include "monster.h"
 
-Encounter::Encounter(Bane b, float br, ElementalWeakness e, int wm)
+Monster::Monster(Bane b, float br, ElementalWeakness e, int wm)
 {
     if(b == BANELESS && br != 0) throw std::invalid_argument("Bane Resistance requires a Bane");
     if(e == NO_WEAKNESS && wm != 0) throw std::invalid_argument("Weakness Magnitude requires a Weakness");

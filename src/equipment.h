@@ -1,6 +1,6 @@
 #pragma once
 
-#include "encounter.h"
+#include "monster.h"
 
 class Equipment {
     public:
@@ -35,7 +35,7 @@ class Equipment {
             STATS_COUNT     //not a stat
         };
         int stats[STATS_COUNT];
-        int ApplyBane(int max_hit, Encounter encounter);
+        int ApplyBane(int max_hit, Monster monster);
         Slot GetSlot();
         int GetSpeed();
         Equipment(Slot s);           //non-weapon constructor

@@ -2,7 +2,7 @@
 
 #include <stdexcept>
 
-class Encounter {
+class Monster {
     public:
         enum Bane {
             BANELESS,
@@ -33,5 +33,5 @@ class Encounter {
         int armour;
         bool wilderness = false;
         bool on_task = true;
-        Encounter(Bane b = BANELESS, float br = 0.0, ElementalWeakness e = NO_WEAKNESS, int wm = 0);
+        Monster(Bane b = BANELESS, float br = 0.0, ElementalWeakness e = NO_WEAKNESS, int wm = 0);
 };

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "monster.h"
+#include <json/json.h>
 
 class Equipment {
     public:

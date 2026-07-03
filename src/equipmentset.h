@@ -9,6 +9,5 @@ class EquipmentSet {
         int getTotalStat(Equipment::Stat);
         int getSpeed();
     private:
-        std::map<Equipment::Slot, Equipment> equipment;
         Equipment equipment[Equipment::SLOTS_COUNT];
 };

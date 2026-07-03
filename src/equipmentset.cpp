@@ -16,5 +16,5 @@ int EquipmentSet::getTotalStat(Equipment::Stat s)
 
 int EquipmentSet::getSpeed()
 {
-    equipment[Equipment::WEAPON].GetSpeed();
+    return equipment[Equipment::WEAPON].GetSpeed();
 }

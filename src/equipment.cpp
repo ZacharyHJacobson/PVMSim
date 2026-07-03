@@ -1,6 +1,5 @@
 #include "equipment.h"
 #include <fstream>
-#include <json/json.h>
 
 int Equipment::ApplyBane(int max_hit, Monster monster)
 {

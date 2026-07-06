@@ -75,10 +75,15 @@ Equipment::Equipment(std::string name)
 
 Json::Value Equipment::GetRoot()
 {
+    return Json::Value();
+}
+
+/*Json::Value Equipment::GetRoot()
+{
     if(root.size() < 1)
     {
         std::ifstream equipment_json_file("equipment.json", std::ifstream::binary);
         equipment_json_file >> root;
     }
     return root;
-}
+}*/

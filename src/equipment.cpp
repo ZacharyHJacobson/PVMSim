@@ -1,6 +1,8 @@
 #include "equipment.h"
 #include <fstream>
 
+Json::Value Equipment::root;
+
 int Equipment::ApplyBane(int max_hit, Monster monster)
 {
     return max_hit;
@@ -75,15 +77,10 @@ Equipment::Equipment(std::string name)
 
 Json::Value Equipment::GetRoot()
 {
-    return Json::Value();
-}
-
-/*Json::Value Equipment::GetRoot()
-{
     if(root.size() < 1)
     {
         std::ifstream equipment_json_file("equipment.json", std::ifstream::binary);
         equipment_json_file >> root;
     }
     return root;
-}*/
+}

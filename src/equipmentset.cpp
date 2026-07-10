@@ -18,3 +18,8 @@ int EquipmentSet::getSpeed()
 {
     return equipment[Equipment::WEAPON].GetSpeed();
 }
+
+EquipmentSet::EquipmentSet()
+{
+
+}

@@ -75,6 +75,14 @@ Equipment::Equipment(std::string name)
     std::invalid_argument("Equipment not found");
 }
 
+Equipment::Equipment()
+{
+    for(int statNum : stats)
+    {
+        std::fill(stats, stats+STATS_COUNT, 0);
+    }
+}
+
 Json::Value Equipment::GetRoot()
 {
     if(root.size() < 1)

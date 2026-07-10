@@ -42,6 +42,7 @@ class Equipment {
         Equipment(Slot s);           //non-weapon constructor
         Equipment(int s);            //weapon constructor
         Equipment(std::string name); //load from equipment.json
+        Equipment();
     private:
         Slot slot;
         int speed;              //in ticks

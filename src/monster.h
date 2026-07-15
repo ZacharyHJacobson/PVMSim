@@ -5,7 +5,7 @@
 class Monster {
     public:
         enum Bane {
-            bane_NONE,
+            bane_NONE = 0,
             bane_DRAGON,
             bane_DEMON,
             bane_RAT,
@@ -21,7 +21,7 @@ class Monster {
         };
         Bane bane;
         enum ElementalWeakness {
-            ew_NONE,
+            ew_NONE = 0,
             ew_AIR,
             ew_WATER,
             ew_EARTH,
@@ -30,7 +30,7 @@ class Monster {
         ElementalWeakness elemental_weakness;
         int weakness_magnitude;
         enum CombatStat {
-            cs_HITPOINTS,
+            cs_HITPOINTS = 0,
             cs_ATTACK,
             cs_STRENGTH,
             cs_DEFENCE,
@@ -40,7 +40,7 @@ class Monster {
         };
         int combat_stats[cs_COUNT];
         enum AggressiveStat {
-            as_ATTACK,
+            as_ATTACK = 0,
             as_STRENGTH,
             as_MAGIC,
             as_MAGIC_STRENGTH,
@@ -50,7 +50,7 @@ class Monster {
         };
         int aggressive_stats[as_COUNT];
         enum DefensiveStat {
-            ds_STAB,
+            ds_STAB = 0,
             ds_SLASH,
             ds_CRUSH,
             ds_MAGIC,
@@ -61,7 +61,7 @@ class Monster {
         };
         int defensive_stats[ds_COUNT];
         enum Immunity {
-            i_VENOM,           //converts to poison if immune
+            i_VENOM = 0,           //converts to poison if immune
             i_POISON,
             i_CANNON,
             i_THRALL,
@@ -69,7 +69,7 @@ class Monster {
         };
         bool immunities[i_COUNT];
         enum Resistance {
-            r_BANE,
+            r_BANE = 0,
             r_VENOM,
             r_POISON,
             r_COUNT    //not a stat

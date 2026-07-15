@@ -6,9 +6,9 @@
 class EquipmentSet {
     public:
         void addEquipment(Equipment);
-        int getTotalStat(Equipment::Stat);
+        int getTotalStat(Equipment::EquipmentStat);
         int getSpeed();
         EquipmentSet();
     private:
-        Equipment equipment[Equipment::SLOTS_COUNT];
+        Equipment equipment[Equipment::eslot_COUNT];
 };

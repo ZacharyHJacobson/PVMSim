@@ -5,7 +5,7 @@ void EquipmentSet::addEquipment(Equipment e)
     equipment[e.GetSlot()] = e;
 }
 
-int EquipmentSet::getTotalStat(Equipment::Stat s)
+int EquipmentSet::getTotalStat(Equipment::EquipmentStat s)
 {
     int total = 0;
     for (auto equip : equipment) {
@@ -16,7 +16,7 @@ int EquipmentSet::getTotalStat(Equipment::Stat s)
 
 int EquipmentSet::getSpeed()
 {
-    return equipment[Equipment::WEAPON].GetSpeed();
+    return equipment[Equipment::eslot_WEAPON].GetSpeed();
 }
 
 EquipmentSet::EquipmentSet()

@@ -5,46 +5,46 @@
 
 class Equipment {
     public:
-        enum Slot {
-            HEAD = 0,
-            BACK,
-            NECK,
-            AMMUNITION,
-            WEAPON,
-            TWOHAND,
-            BODY,
-            SHIELD,
-            LEGS,
-            HANDS,
-            FEET,
-            FINGER,
-            SLOTS_COUNT     //not a slot
+        enum EquipmentSlot {
+            eslot_HEAD = 0,
+            eslot_BACK,
+            eslot_NECK,
+            eslot_AMMUNITION,
+            eslot_WEAPON,
+            eslot_TWOHAND,
+            eslot_BODY,
+            eslot_SHIELD,
+            eslot_LEGS,
+            eslot_HANDS,
+            eslot_FEET,
+            eslot_FINGER,
+            eslot_COUNT     //not a slot
         };
-        enum Stat {
-            STAB_ACCURACY = 0,
-            SLASH_ACCURACY,
-            CRUSH_ACCURACY,
-            MAGIC_ACCURACY,
-            STAB_DEFENCE,
-            SLASH_DEFENCE,
-            CRUSH_DEFENCE,
-            MAGIC_DEFENCE,
-            MELEE_STRENGTH,
-            RANGED_STRENGTH,
-            MAGIC_STRENGTH,
-            PRAYER_BONUS,    //1.5% = 15, 2% = 20
-            STATS_COUNT     //not a stat
+        enum EquipmentStat {
+            estat_STAB_ACCURACY = 0,
+            estat_SLASH_ACCURACY,
+            estat_CRUSH_ACCURACY,
+            estat_MAGIC_ACCURACY,
+            estat_STAB_DEFENCE,
+            estat_SLASH_DEFENCE,
+            estat_CRUSH_DEFENCE,
+            estat_MAGIC_DEFENCE,
+            estat_MELEE_STRENGTH,
+            estat_RANGED_STRENGTH,
+            estat_MAGIC_STRENGTH,
+            estat_PRAYER_BONUS,    //1.5% = 15, 2% = 20
+            estat_COUNT     //not a stat
         };
-        int stats[STATS_COUNT];
+        int stats[estat_COUNT];
         int ApplyBane(int max_hit, Monster monster);
-        Slot GetSlot();
+        EquipmentSlot GetSlot();
         int GetSpeed();
-        Equipment(Slot s);           //non-weapon constructor
+        Equipment(EquipmentSlot s);           //non-weapon constructor
         Equipment(int s);            //weapon constructor
         Equipment(std::string name); //load from equipment.json
         Equipment();
     private:
-        Slot slot;
+        EquipmentSlot slot;
         int speed;              //in ticks
         static Json::Value root;
         Json::Value GetRoot();

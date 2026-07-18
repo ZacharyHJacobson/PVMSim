@@ -1,4 +1,7 @@
 #include "monster.h"
+#include <fstream>
+
+Json::Value Monster::root;
 
 Monster::Monster(Bane b, float br, ElementalWeakness e, int wm)
 {
@@ -9,4 +12,31 @@ Monster::Monster(Bane b, float br, ElementalWeakness e, int wm)
     resistances[r_BANE] = br;
     elemental_weakness = e;
     weakness_magnitude = wm;
+}
+
+Monster::Monster(std::string name)
+{
+    Json::Value monster_root = GetRoot();
+
+    Json::Value monster_stats;
+    for(int x = 0; x < monster_root.size(); x++)
+    {
+        monster_stats = monster_root[x];
+        if(monster_stats["name"].asString() == name)
+        {
+            
+            return;
+        }
+    }
+    std::invalid_argument("Monster not found");
+}
+
+Json::Value Monster::GetRoot()
+{
+    if(root.size() < 1)
+    {
+        std::ifstream monster_json_file("monsters.json", std::ifstream::binary);
+        monster_json_file >> root;
+    }
+    return root;
 }

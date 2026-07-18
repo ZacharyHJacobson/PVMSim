@@ -1,5 +1,6 @@
 #pragma once
 
+#include "json/json.h"
 #include <stdexcept>
 
 class Monster {
@@ -78,4 +79,8 @@ class Monster {
         bool wilderness = false;
         bool on_task = true;
         Monster(Bane b = bane_NONE, float br = 0.0, ElementalWeakness e = ew_NONE, int wm = 0);
+        Monster(std::string name); //load from monsters.json
+    private:
+        static Json::Value root;
+        Json::Value GetRoot();
 };

@@ -30,6 +30,22 @@ Monster::Monster(std::string name)
             combat_stats[cs_DEFENCE] = monster_stats["skills"]["def"].asInt();
             combat_stats[cs_MAGIC] = monster_stats["skills"]["magic"].asInt();
             combat_stats[cs_RANGED] = monster_stats["skills"]["ranged"].asInt();
+
+            aggressive_stats[as_ATTACK] = monster_stats["offensive"]["atk"].asInt();
+            aggressive_stats[as_STRENGTH] = monster_stats["offensive"]["str"].asInt();
+            aggressive_stats[as_MAGIC] = monster_stats["offensive"]["magic"].asInt();
+            aggressive_stats[as_MAGIC_STRENGTH] = monster_stats["offensive"]["magic_str"].asInt();
+            aggressive_stats[as_RANGED] = monster_stats["offensive"]["ranged"].asInt();
+            aggressive_stats[as_RANGED_STRENGTH] = monster_stats["offensive"]["ranged_str"].asInt();
+
+            defensive_stats[ds_STAB] = monster_stats["defensive"]["stab"].asInt();
+            defensive_stats[ds_SLASH] = monster_stats["defensive"]["slash"].asInt();
+            defensive_stats[ds_CRUSH] = monster_stats["defensive"]["crush"].asInt();
+            defensive_stats[ds_MAGIC] = monster_stats["defensive"]["magic"].asInt();
+            defensive_stats[ds_LIGHT] = monster_stats["defensive"]["light"].asInt();
+            defensive_stats[ds_MEDIUM] = monster_stats["defensive"]["medium"].asInt();
+            defensive_stats[ds_HEAVY] = monster_stats["defensive"]["heavy"].asInt();
+            defensive_stats[ds_FLAT_ARMOUR] = monster_stats["defensive"]["flat_armour"].asInt();
             return;
         }
     }

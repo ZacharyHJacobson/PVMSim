@@ -58,6 +58,7 @@ class Monster {
             ds_LIGHT,
             ds_MEDIUM,
             ds_HEAVY,
+            ds_FLAT_ARMOUR,
             ds_COUNT       //not a stat
         };
         int defensive_stats[ds_COUNT];

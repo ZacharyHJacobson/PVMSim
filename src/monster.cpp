@@ -24,7 +24,12 @@ Monster::Monster(std::string name)
         monster_stats = monster_root[x];
         if(monster_stats["name"].asString() == name)
         {
-            
+            combat_stats[cs_HITPOINTS] = monster_stats["skills"]["hp"].asInt();
+            combat_stats[cs_ATTACK] = monster_stats["skills"]["atk"].asInt();
+            combat_stats[cs_STRENGTH] = monster_stats["skills"]["str"].asInt();
+            combat_stats[cs_DEFENCE] = monster_stats["skills"]["def"].asInt();
+            combat_stats[cs_MAGIC] = monster_stats["skills"]["magic"].asInt();
+            combat_stats[cs_RANGED] = monster_stats["skills"]["ranged"].asInt();
             return;
         }
     }

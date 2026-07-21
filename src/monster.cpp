@@ -46,6 +46,26 @@ Monster::Monster(std::string name)
             defensive_stats[ds_MEDIUM] = monster_stats["defensive"]["medium"].asInt();
             defensive_stats[ds_HEAVY] = monster_stats["defensive"]["heavy"].asInt();
             defensive_stats[ds_FLAT_ARMOUR] = monster_stats["defensive"]["flat_armour"].asInt();
+
+            if(monster_stats["attributes"].findString("draconic")) bane = bane_DRAGON;
+            if(monster_stats["attributes"].findString("demon")) bane = bane_DEMON;
+            if(monster_stats["attributes"].findString("rat")) bane = bane_RAT;
+            if(monster_stats["attributes"].findString("undead")) bane = bane_UNDEAD;
+            if((monster_stats["attributes"].findString("vampyre1"))||(monster_stats["attributes"].findString("vampyre2"))||(monster_stats["attributes"].findString("vampyre3"))) bane = bane_VAMPYRE;
+            if(monster_stats["attributes"].findString("golem")) bane = bane_GOLEM;
+            if(monster_stats["attributes"].findString("leafy")) bane = bane_LEAF;
+            if(monster_stats["attributes"].findString("kalphite")) bane = bane_KALPHITE;
+            if(name == "Corporeal Beast") bane = bane_CORP;
+            if((name == "Mirrorback Araxyte")||(name == "Ruptura Araxyte")||(name == "Acidic Araxyte")) bane = bane_HATCHED_ARAXYTE;
+            if(monster_stats["attributes"].findString("xerician")) bane = bane_XERIC;
+            if((name == "Baboon Brawler")||(name == "Baboon Mage")||(name == "Baboon Shaman")||(name == "Baboon Thrall")||(name == "Baboon Thrower")||(name == "Cursed Baboon")||(name == "Volatile Baboon")||
+                (name == "Ba-Ba")||(name == "Baboon")||(name == "Boulder")||
+                (name == "Sacarab (Tombs of Amascut)")||
+                (name == "Kephri")||(name == "Egg (Tombs of Amascut)")||(name == "Agile Scarab")||(name == "Arcane Scarab")||(name == "Scarab Swarm (Tombs of Amascut)")||(name == "Soldier Scarab")||(name == "Spitting Scarab")||
+                (name == "Akkha")||(name == "Akkha's Shadow")||
+                (name == "Crocodile (Tombs of Amascut)")||
+                (name == "Zebak")||(name == "Blood Cloud")||
+                (name == "Obelisk (Tombs of Amascut)")||(name == "Tumeken's Warden")||(name == "Elidinis' Warden")) bane = bane_AMASCUT;
             return;
         }
     }

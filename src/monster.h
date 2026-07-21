@@ -16,7 +16,7 @@ class Monster {
             bane_LEAF,
             bane_KALPHITE,
             bane_CORP,
-            bane_ARAXYTE,
+            bane_HATCHED_ARAXYTE,
             bane_XERIC,
             bane_AMASCUT
         };

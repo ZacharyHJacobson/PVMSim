@@ -65,6 +65,7 @@ class Monster {
         enum Immunity {
             i_VENOM = 0,           //converts to poison if immune
             i_POISON,
+            i_BURN,
             i_CANNON,
             i_THRALL,
             i_COUNT    //not a stat

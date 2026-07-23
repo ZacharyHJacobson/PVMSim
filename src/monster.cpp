@@ -66,6 +66,20 @@ Monster::Monster(std::string name)
                 (name == "Crocodile (Tombs of Amascut)")||
                 (name == "Zebak")||(name == "Blood Cloud")||
                 (name == "Obelisk (Tombs of Amascut)")||(name == "Tumeken's Warden")||(name == "Elidinis' Warden")) bane = bane_AMASCUT;
+            
+            if(monster_stats["weakness"])
+            {
+                if(monster_stats["weakness"]["element"].asString() == "water") elemental_weakness = ew_WATER;
+                else if(monster_stats["weakness"]["element"].asString() == "fire") elemental_weakness = ew_FIRE;
+                else if(monster_stats["weakness"]["element"].asString() == "air") elemental_weakness = ew_AIR;
+                else if(monster_stats["weakness"]["element"].asString() == "earth") elemental_weakness = ew_EARTH;
+            }
+            weakness_magnitude = monster_stats["weakness"]["severity"].asInt();
+
+            if(monster_stats["immunities"]["burn"]) immunities[i_BURN] = true;  //no other immunities, resistances, or wilderness location are present in monsters.json, must be assigned manually
+
+            if (monster_stats["is_slayer_monster"].asBool()) on_task = true;
+            
             return;
         }
     }
